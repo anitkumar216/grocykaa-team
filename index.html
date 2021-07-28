@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GrocyKaa</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="header" id="topheader">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container text-uppercase p-2">
+                    <a class="navbar-brand font-weight-bold text-white" href="#"><img src="images/whitelogo.png" height="50px" width="50px"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+              
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto text-uppercase">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Staff</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#headerDownload">Download App</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contactUs">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </nav>
+              <section class="header-section">
+                  <div class="center-div">
+                      <h1 class="font-weight-bold">GrocyKaa is your low price online grocery store.</h1>
+                      <p>GrocyKaa is your low price online store where you get the latest products from leading brands.</p>
+                      <div class="header-buttons">
+                          <a href="#headerDownload">Download</a>
+                          <a href="#contactUs">Contact</a>
+                      </div>
+                  </div>
+              </section>
+        </div>
+
+        <!--********************Header Parts End Here*********************-->
+
+        <!--********************Three Extra Header Div Starts Here*********************-->
+
+        <section class="header-extradiv" id="headerDownload">
+            <div class="row justify-content-center">
+                <div class="extra-div justify-content-center col-lg-4 col-md-4 col-12">
+                    <i class="fa-3x fa" aria-hidden="true">
+                        <img src="images/grocykaa_qr_code.png" alt="QR Code">
+                    </i><br>
+
+                    <a href="http://www.grocykaa.com"><img height="70px" width="200px" src="images/google-play-badge.png" alt="Play Store Link"></a>
+                </div>
+            </div>
+        </section>
+
+        <!--********************Three Extra Header Div Ends Here*********************-->
+
+        <!--********************Contact Us Start Here*********************-->
+
+        <section class="contactus" id="contactUs">
+            <div class="container headings text-center">
+                <h1 class="text-center font-weight-bold">Contact Us</h1>
+                <p>We're Here To Help And Answer Any Question You Might Have.</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-10 offset-lg-2 offset-md-2 offset-1">
+                        <form name="contact" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" placeholder="Enter Name" required autocomplete="off"><br>
+                                <input type="text" class="form-control" id="subject" placeholder="Enter Subject" required autocomplete="off"><br>
+                                <input type="number" class="form-control" id="phone" placeholder="Enter Phone Number" required autocomplete="off"><br>
+                                <textarea class="form-control" rows="4" id="message" placeholder="Enter Your Message"></textarea><br>
+                            </div>
+
+                            <div class="form-button d-flex justify-content-center">
+                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+
+                        <script>
+                            var form = document.forms["contact"];
+                            form.addEventListener('submit',contact_submit,false);
+                        
+                            function contact_submit(e) {
+                                // Stop Form From Submitting
+                                e.preventDefault();
+                        
+                                // Set Initial Variables
+                                var target = e.target || e.srcElement;
+                                var to = 'grpcykaa@gmail.com';
+                                var uri = 'mailto:' + to;
+                                var body = '';
+                        
+                                // Set Form Values to Variables
+                                var name = target.elements['name'].value;
+                                var subject = target.elements['subject'].value;
+                                var phone = target.elements['phone'].value;
+                                var message = target.elements['message'].value;
+                        
+                                // Build Body / Message with all Input Fields
+                                body += message + "\r\n\r\n";
+                                body += "Name: " + name + "\r\n";
+                                body += "Phone Number: " + phone + "\r\n";
+                        
+                                // Build final Mailto URI
+                                uri += '?subject=' + encodeURIComponent(subject);
+                                uri += '&body=' + encodeURIComponent(body);
+                        
+                                // Open Mailto in New Window / Tab
+                                window.open(uri,'_blank');
+                            }
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--********************Contact Us Ends Here*********************-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
